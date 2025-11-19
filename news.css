@@ -1,0 +1,391 @@
+/*youtube supersimpleDev*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-style: italic;
+    color: #aaa;
+    font-size: 1.2rem;
+}
+
+/* Navigation */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    background-color: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    background-color: transparent;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    background-color: white;
+    color: #1a1a1a;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: white;
+    margin: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input {
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    width: 250px;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.search-box input:focus {
+    border-color: #1a1a1a;
+    outline: none;
+}
+
+.filter-options {
+    display: flex;
+    gap: 15px;
+}
+
+select, button {
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    background-color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+select:focus, button:focus {
+    outline: none;
+    border-color: #1a1a1a;
+}
+
+button.active {
+    background-color: #1a1a1a;
+    color: white;
+}
+
+/* Section Titles */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 30px 0;
+    color: #1a1a1a;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background-color: #1a1a1a;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+/* News Items */
+#news-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.news-item {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.news-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.news-item p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+}
+
+.news-category {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Social Section */
+#sosa-socials {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+#sosa-socials p {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.social-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards;
+}
+
+.social-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.social-card a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: color 0.3s;
+}
+
+.social-card:hover a {
+    color: #555;
+}
+
+.social-icon {
+    font-size: 1.5rem;
+}
+
+/* Newsletter */
+.newsletter-signup {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 40px;
+    margin: 40px 0;
+    text-align: center;
+    border-radius: 12px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsletter-signup h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.newsletter-signup p {
+    margin-bottom: 25px;
+    color: #ccc;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-form input {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 25px;
+    width: 70%;
+    font-size: 1rem;
+}
+
+.newsletter-form button {
+    padding: 12px 25px;
+    background: linear-gradient(to right, #fff, #e0e0e0);
+    color: #1a1a1a;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.newsletter-form button:hover {
+    background: linear-gradient(to right, #e0e0e0, #fff);
+    transform: scale(1.05);
+}
+
+/* Toast notifications */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background-color: #2ecc71;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease;
+    z-index: 3000;
+}
+
+.toast.show {
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .search-box input {
+        width: 100%;
+    }
+
+    .filter-options {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .newsletter-form input {
+        width: 100%;
+    }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOSA Movement - About Us</title>
+    <link rel="stylesheet" href="about us.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>SOSA</h1>
+        <p class="tagline">Where Imperfection Persists</p>
+    </header>
+
+    <nav class="sosa-nav">
+        <ul>
+            <li><a href="home page.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about us.html" class="active">About</a></li>
+            <li><a href="news updates.html">News</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search content...">
+            <button id="search-btn">Search</button>
+        </div>
+        <div class="filter-options">
+            <select id="section-filter">
+                <option value="all">All Sections</option>
+                <option value="about">What is SOSA?</option>
+                <option value="vision">Vision</option>
+                <option value="mission">Mission</option>
+                <option value="goals">Goals</option>
+            </select>
+            <button id="toggle-animations">Pause Animations</button>
+        </div>
+    </div>
+
+    <main>
+        <div class="content-wrapper">
+            <section id="hero">
+                <h1 class="main-title">SOSA is a movement</h1>
+                <div class="hero-image">
+                    <img src="images/movement-hero.jpg" alt="SOSA Movement">
+                </div>
+            </section>
+
+            <section id="about-content">
+                <!-- Content sections will be dynamically inserted here -->
+            </section>
+
+            <section id="values">
+                <h2 class="section-title">Our Core Values</h2>
+                <div class="values-grid" id="values-container">
+                    <!-- Values will be dynamically inserted here -->
+                </div>
+            </section>
+
+            <section id="timeline">
+                <h2 class="section-title">Our Journey</h2>
+                <div class="timeline-container" id="timeline-content">
+                    <!-- Timeline items will be dynamically inserted here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div class="toast" id="toast">Welcome to the SOSA movement!</div>
+
+    <footer>
+        <p>&copy; SOSA all rights reserved 2025</p>
+    </footer>
+
+    <script src="about us.js"></script>
+</body>
+</html>

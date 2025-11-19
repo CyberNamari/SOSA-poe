@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOSA News & Updates</title>
+    <link rel="stylesheet" href="news.css">
+</head>
+<body>
+    <header>
+        <h1>SOSA</h1>
+        <p class="tagline">Where Imperfection Persists</p>
+    </header>
+
+    <nav class="sosa-nav">
+        <ul>
+            <li><a href="home page.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about us.html">About</a></li>
+            <li><a href="news updates.html" class="active">News</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search news...">
+            <button id="search-btn">Search</button>
+        </div>
+        <div class="filter-options">
+            <select id="category-filter">
+                <option value="all">All Categories</option>
+                <option value="events">Events</option>
+                <option value="releases">New Releases</option>
+                <option value="collaborations">Collaborations</option>
+                <option value="community">Community</option>
+            </select>
+            <select id="date-filter">
+                <option value="all">All Dates</option>
+                <option value="week">This Week</option>
+                <option value="month">This Month</option>
+                <option value="quarter">Last 3 Months</option>
+            </select>
+            <button id="sort-date">Sort by Date</button>
+        </div>
+    </div>
+
+    <section id="news-updates">
+        <h2 class="section-title">SOSA News & Updates</h2>
+        <div id="news-container">
+            <!-- News items will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <section id="sosa-socials">
+        <h2 class="section-title">Follow SOSA</h2>
+        <p>Stay connected with us for the latest drops, events, and inspiration:</p>
+        <div class="social-grid" id="social-container">
+            <!-- Social links will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <div class="newsletter-signup">
+        <h3>Stay Updated</h3>
+        <p>Subscribe to our newsletter for exclusive updates</p>
+        <div class="newsletter-form">
+            <input type="email" id="newsletter-email" placeholder="Enter your email">
+            <button id="subscribe-btn">Subscribe</button>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">Subscribed successfully!</div>
+
+    <footer>
+        <p>&copy; SOSA all rights reserved 2025</p>
+    </footer>
+
+    <script src="news.js"></script>
+</body>
+</html>

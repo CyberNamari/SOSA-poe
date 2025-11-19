@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SOSA Products</title>
+    <link rel="stylesheet" href="products.css">
+</head>
+<body>
+    <header>
+        <h1>SOSA</h1>
+        <p class="tagline">Where Imperfection Persists</p>
+    </header>
+
+    <nav class="sosa-nav">
+        <ul>
+            <li><a href="home page.html">Home</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="about us.html">About</a></li>
+            <li><a href="news updates.html">News</a></li>
+            <li><a href="contacts.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search products...">
+            <button id="search-btn">Search</button>
+        </div>
+        <div class="filter-options">
+            <select id="category-filter">
+                <option value="all">All Categories</option>
+                <option value="hoodie">Hoodies</option>
+                <option value="tee">Tees</option>
+                <option value="jacket">Jackets</option>
+                <option value="pants">Pants</option>
+                <option value="sweater">Sweaters</option>
+                <option value="accessory">Accessories</option>
+            </select>
+            <select id="price-filter">
+                <option value="all">All Prices</option>
+                <option value="0-500">Under R500</option>
+                <option value="500-1000">R500 - R1000</option>
+                <option value="1000-1500">R1000 - R1500</option>
+                <option value="1500+">Over R1500</option>
+            </select>
+            <button id="sort-price">Sort by Price</button>
+        </div>
+    </div>
+
+    <section id="products">
+        <h2 class="section-title">Our Collection</h2>
+        <div class="product-grid" id="product-container">
+            <!-- Products will be dynamically inserted here by JavaScript -->
+            <!-- Fallback static products in case JavaScript fails -->
+            <div class="product-card">
+                <span class="sale-badge">SALE</span>
+                <img src="C:\Users\RC_Student_Lab\Downloads\SOSA\SOSA\Images\pictures\10.png" alt="Classic Hoodie" class="product-image">
+                <div class="product-info">
+                    <h3>Classic Hoodie</h3>
+                    <p class="price">R899.00</p>
+                    <button class="add-to-cart" data-id="1">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="C:\Users\RC_Student_Lab\Downloads\SOSA\SOSA\Images\pictures\10.png" alt="Streetwear Tee" class="product-image">
+                <div class="product-info">
+                    <h3>Streetwear Tee</h3>
+                    <p class="price">R499.00</p>
+                    <button class="add-to-cart" data-id="2">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <span class="sale-badge">SALE</span>
+                <img src="C:\Users\RC_Student_Lab\Downloads\SOSA\SOSA\Images\white.png" alt="White Tee" class="product-image">
+                <div class="product-info">
+                    <h3>White Tee</h3>
+                    <p class="price">R1299.00</p>
+                    <button class="add-to-cart" data-id="3">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="C:\Users\RC_Student_Lab\Downloads\SOSA\SOSA\Images\track.png"alt="Track Pants" class="product-image">
+                <div class="product-info">
+                    <h3>Track Pants</h3>
+                    <p class="price">R699.00</p>
+                    <button class="add-to-cart" data-id="4">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="C:\Users\RC_Student_Lab\Downloads\SOSA\SOSA\Images\4.png" alt="Character Collection" class="product-image">
+                <div class="product-info">
+                    <h3>Character Collection</h3>
+                    <p class="price">R999.00</p>
+                    <button class="add-to-cart" data-id="5">Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <span class="sale-badge">SALE</span>
+                <img src="C:\Users\RC_Student_Lab\Downloads\SOSA\SOSA\Images\bucket hat.png" alt="Bucket Hat" class="product-image">
+                <div class="product-info">
+                    <h3>Bucket Hat</h3>
+                    <p class="price">R299.00</p>
+                    <button class="add-to-cart" data-id="6">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="close-btn" id="close-lightbox">&times;</span>
+            <div class="lightbox-image-container">
+                <img id="lightbox-image" src="" alt="">
+                <button class="lightbox-nav prev" id="prev-btn">&#10094;</button>
+                <button class="lightbox-nav next" id="next-btn">&#10095;</button>
+            </div>
+            <div class="lightbox-info">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-description"></p>
+                <div class="lightbox-meta">
+                    <span id="lightbox-price"></span>
+                    <span id="lightbox-category"></span>
+                </div>
+                <button class="add-to-cart-lightbox" id="add-to-cart-lightbox">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-icon" id="cart-icon">
+        <i>??</i>
+        <span class="cart-count" id="cart-count">0</span>
+    </div>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="close-cart">×</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be dynamically inserted here -->
+        </div>
+        <div class="cart-total" id="cart-total">Total: R0.00</div>
+        <button class="checkout-btn" id="checkout-btn">Checkout</button>
+    </div>
+
+    <div class="toast" id="toast">Product added to cart!</div>
+
+    <footer>
+        <p>&copy; SOSA all rights reserved 2025</p>
+    </footer>
+
+    <script src="products.js"></script>
+</body>
+</html>
